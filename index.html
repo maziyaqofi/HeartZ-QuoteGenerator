@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HeartZ</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="container">
+
+        <!-- NAVBAR -->
+        <nav>
+
+            <div class="logo">
+                <h1>Heart<span>Z</span></h1>
+            </div>
+
+            <ul>
+                <li>
+                    <a href="index.html">Home</a>
+                </li>
+                <li>
+                    <a href="about.html">About</a>
+                </li>
+            </ul>
+
+        </nav>
+
+        <!-- HERO -->
+        <section class="hero">
+
+            <h1>
+                Random <span>Quotes</span><br>
+                Generator
+            </h1>
+
+            <!-- CATEGORIES -->
+            <div class="categories">
+
+                <button>Java</button>
+                <button>Arab</button>
+                <button>Bollywood</button>
+                <button>English</button>
+                <button>Indonesia</button>
+
+            </div>
+
+            <!-- GENERATE BUTTON -->
+            <button class="generate_btn">
+                Get Quote
+            </button>
+
+            <!-- OVERLAY -->
+
+            <div class="overlay hidden">
+
+                <div class="quote_modal">
+
+                    <!-- CLOSE BUTTON -->
+                    <span class="close_btn">×</span>
+
+                    <!-- QUOTE -->
+                    <h2 class="modal_quote">
+                        "Your quote will appear here"
+                    </h2>
+
+                    <!-- AUTHOR -->
+                    <p class="modal_author">
+                        Taylor Swift - White Horse
+                    </p>
+
+                    <!-- ACTION BUTTONS -->
+                    <div class="modal_buttons">
+
+                        <button>Dislike</button>
+                        <button>Like</button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+        </section>
+
+    </div>
+
+    <script src="quotes.js"></script>
+    <script src="script.js"></script>
+
+</body>
+</html>
