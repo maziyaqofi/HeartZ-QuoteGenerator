@@ -18,7 +18,7 @@ body {
 
 nav {
     width: 100%;
-    height: 80px;
+    height: 60px;
     background: white;
 
     display: flex;
@@ -33,16 +33,47 @@ nav {
     font-size: 40px;
 }
 
+.logo h1 span {
+    color: #f24141;
+}
+
 nav ul {
     display: flex;
-    gap: 40px;
+    gap: 60px;
     list-style: none;
 }
 
 nav ul li {
-    font-size: 22px;
+    font-size: 20px;
     font-weight: bold;
     cursor: pointer;
+}
+
+ul {
+    list-style: none;
+}
+
+li {
+    display: inline;
+    margin-right: 20px;
+}
+
+a {
+    text-decoration: none;
+    color: #F24141;
+    transition: 0.3s;
+}
+
+a:hover {
+    color: #a0002d;
+}
+
+/* link aktif */
+a.active {
+    color: #a0002d;
+    background-color: #F4CCD2;
+    padding: 4px 20px;
+    border-radius: 5px;
 }
 
 /* HERO */
@@ -50,7 +81,7 @@ nav ul li {
 .hero {
     width: 100%;
     text-align: center;
-    padding-top: 80px;
+    padding-top: 50px;
 }
 
 .hero h1 {
@@ -62,45 +93,131 @@ nav ul li {
     color: #a0002d;
 }
 
-/* CATEGORIES */
+.hero h3 {
+    font-size: 24px;
+    margin-top: 20px;
+    color: #a0002d;
+    font-style: italic;
+}
 
-.categories {
-    margin-top: 60px;
+/* QUOTE CONTROLS */
+
+.quote_controls {
+    margin-top: 30px;
 
     display: flex;
     justify-content: center;
+    align-items: center;
     gap: 20px;
 }
 
-.categories button {
-    width: 180px;
-    height: 60px;
+.dropdown {
+    position: relative;
+}
 
-    border: none;
+.dropdown_btn {
+    width: 540px;
+    height: 66px;
+
+    border: 2px solid #ffffff;
+    border-radius: 10px;
+
+    background: white;
+    color: #a0002d;
+    font-style: italic;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 0 24px;
+
+    font-size: 22px;
+    
+    text-align: left;
+
+    cursor: pointer;
+
+    box-shadow: 0 12px 30px rgba(160, 0, 45, 0.12);
+}
+
+.dropdown_arrow {
+    font-size: 28px;
+    line-height: 1;
+
+    transition: 0.3s;
+}
+
+.dropdown_btn.active .dropdown_arrow {
+    transform: rotate(180deg);
+}
+
+/* MENU */
+
+.dropdown_menu {
+    position: absolute;
+
+    top: 72px;
+    left: 0;
+
+    width: 540px;
     background: white;
 
-    font-size: 24px;
+    border-radius: 10px;
+    list-style: none;
+    overflow: hidden;
+    display: none;
+
+    box-shadow: 0 18px 35px rgba(160, 0, 45, 0.18);
+}
+
+/* ACTIVE MENU */
+
+.dropdown_menu.show {
+    display: block;
+}
+
+/* ITEM */
+
+.dropdown_menu li {
+    display: block;
+
+    padding: 18px 24px;
+    margin-right: 0;
+
+    font-size: 20px;
+    text-align: left;
+    color: #a0002d;
+
     cursor: pointer;
+
+    transition: 0.3s;
+}
+
+.dropdown_menu li:hover {
+    background: #a0002d;
+
+    color: white;
 }
 
 /* GENERATE BUTTON */
 
 .generate_btn {
-    width: 500px;
-    height: 90px;
-
-    margin-top: 80px;
+    width: 240px;
+    height: 66px;
 
     border: none;
-    border-radius: 20px;
+    border-radius: 10px;
 
     background: #a0002d;
     color: white;
 
-    font-size: 40px;
+    font-size: 24px;
     font-weight: bold;
 
     cursor: pointer;
+
+    box-shadow: 0 12px 30px rgba(160, 0, 45, 0.22);
 }
 
 /* OVERLAY */
@@ -114,7 +231,7 @@ nav ul li {
     width: 100%;
     height: 100vh;
 
-    background: rgba(0, 0, 0, 0.35);
+    background: rgba(255, 255, 255, 0.35);
 
     backdrop-filter: blur(12px);
 
@@ -156,42 +273,6 @@ nav ul li {
     overflow: hidden;
 }
 
-.quote_modal::before {
-    content: "";
-
-    position: absolute;
-
-    width: 300px;
-    height: 300px;
-
-    background: radial-gradient(circle,
-        rgba(255, 0, 128, 0.5),
-        transparent);
-
-    top: -100px;
-    left: -100px;
-
-    z-index: -1;
-}
-
-.quote_modal::after {
-    content: "";
-
-    position: absolute;
-
-    width: 300px;
-    height: 300px;
-
-    background: radial-gradient(circle,
-        rgba(0, 255, 255, 0.4),
-        transparent);
-
-    bottom: -120px;
-    right: -100px;
-
-    z-index: -1;
-}
-
 /* CLOSE BUTTON */
 
 .close_btn {
@@ -214,7 +295,7 @@ nav ul li {
 
     line-height: 1.5;
 
-    color: white;
+    color: black;
 
     margin-top: 40px;
 
@@ -226,7 +307,7 @@ nav ul li {
 .modal_author {
     margin-top: 30px;
 
-    color: rgba(255, 255, 255, 0.8);
+    color: rgba(180, 23, 23, 0.8);
 
     font-size: 24px;
 
@@ -248,16 +329,13 @@ nav ul li {
     height: 60px;
 
     border: none;
-
     border-radius: 16px;
-
-    background: rgba(255, 255, 255, 0.2);
-
-    color: white;
+    background: #f4c9ca;
+    color: #a0002d;
 
     backdrop-filter: blur(10px);
 
-    font-size: 24px;
+    font-size: 20px;
 
     cursor: pointer;
 
@@ -267,5 +345,34 @@ nav ul li {
 .modal_buttons button:hover {
     transform: scale(1.05);
 
-    background: rgba(255, 255, 255, 0.3);
+    background: #a0002d;
+    color: white;
+}
+
+@media (max-width: 760px) {
+    nav {
+        padding: 0 24px;
+    }
+
+    .hero h1 {
+        font-size: 58px;
+    }
+
+    .hero h3 {
+        font-size: 18px;
+        padding: 0 24px;
+    }
+
+    .quote_controls {
+        flex-direction: column;
+        padding: 0 24px;
+    }
+
+    .dropdown,
+    .dropdown_btn,
+    .dropdown_menu,
+    .generate_btn {
+        width: 100%;
+        max-width: 360px;
+    }
 }
